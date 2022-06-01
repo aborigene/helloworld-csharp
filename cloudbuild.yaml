@@ -1,0 +1,20 @@
+steps:
+# Build and Restore App
+- name: 'mcr.microsoft.com/dotnet/sdk:6.0'
+  entrypoint: dotnet
+  args: ['publish', '-c', 'Release', '-o', '/workspace/app']
+# Download OneAgent
+#- name: 'gcr.io/cloud-builders/wget'
+#  args: ['-O', '/workspace/installer.sh', 'https://<tenant>.live.dynatrace.com/api/v1/deployment/installer/agent/unix/paas-sh/latest?Api-Token=<TOKEN>&flavor=default&include=dotnet']
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/sales-engineering-latam/built_image', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/sales-engineering-latam/built_image']
+# Deploy container image to Cloud Run
+#- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+#  entrypoint: gcloud
+#  args: ['run', 'deploy', 'helloworld-csharp', '--image', 'gcr.io/sales-engineering-latam/built_image', '--region', 'us-east1']
+#images:
+#- gcr.io/sales-engineering-latam/helloworld-csharp:cloudbuildv1
