@@ -29,7 +29,7 @@ builder.Services.AddOpenTelemetryTracing(b =>
         o.Protocol = OtlpExportProtocol.HttpProtobuf;
         var base_endpoint = Environment.GetEnvironmentVariable("DT_API_BASE_ENDPOINT");
         var full_endpoint = base_endpoint + "/v2/otlp/v1/traces";
-        
+
         o.Endpoint = new Uri(full_endpoint); 
         o.HttpClientFactory = () =>
         {
@@ -91,8 +91,13 @@ app.MapGet("/outraUrl", async () =>  {
     client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
     var streamTask = client.GetStreamAsync("https://api.github.com/orgs/dotnet/repos");
-    repositories += await JsonSerializer.DeserializeAsync<List<WebAPIClient.Repository>>(await streamTask);
-    return repositories;
+    var repo_list = await JsonSerializer.DeserializeAsync<List<WebAPIClient.Repository>>(await streamTask);
+    foreach(WebAPIClient.Repository entry in repo_list){
+        Console.WriteLine("Entry: "+ entry);
+        repositories += entry.Name+", ";
+    }
+    char[] charToTrim = {',',' '};
+    return repositories.Trim(charToTrim);
 });
 
 app.Run(url);
