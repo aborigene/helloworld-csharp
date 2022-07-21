@@ -8,10 +8,10 @@ steps:
 #  args: ['-O', '/workspace/installer.sh', 'https://<tenant>.live.dynatrace.com/api/v1/deployment/installer/agent/unix/paas-sh/latest?Api-Token=<TOKEN>&flavor=default&include=dotnet']
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/sales-engineering-latam/built_image', '.']
+  args: ['build', '-t', 'gcr.io/<repositort>/built_image', '.']
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/sales-engineering-latam/built_image']
+  args: ['push', 'gcr.io/<repositort>/built_image']
 # Deploy container image to Cloud Run
 #- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
 #  entrypoint: gcloud
