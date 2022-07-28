@@ -3,8 +3,8 @@ cd /app
 echo "Starting app"
 /bin/bash entrypoint.sh &
 
-echo "Sleeping 20s"
-sleep 20
+#echo "Sleeping 20s"
+#sleep 20
 
 echo "Listing logs"
 
