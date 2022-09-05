@@ -2,7 +2,7 @@
 #apt-get update
 #apt-get install curl -y
 echo "Downloading OneAgent"
-curl -o /tmp/installer.sh -s "$DT_ENDPOINT/api/v1/deployment/installer/agent/unix/paas-sh/latest?Api-Token=$DT_TOKEN&arch=x86&include=dotnet"
+curl -ko /tmp/installer.sh -s "$DT_ENDPOINT/api/v1/deployment/installer/agent/unix/paas-sh/latest?Api-Token=$DT_TOKEN&arch=x86&include=dotnet"
 
 echo "Installing OneAgent"
 sh /tmp/installer.sh
