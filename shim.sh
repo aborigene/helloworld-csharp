@@ -1,5 +1,6 @@
 #!/bin/bash
 cd /app
+env
 echo "Starting app"
 /bin/bash entrypoint.sh &
 
