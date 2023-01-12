@@ -20,7 +20,7 @@ RUN chmod +x /app/shim.sh
 ENV DT_ENDPOINT=https://XXX
 ENV DT_TOKEN=xxxx
 
-ENTRYPOINT [ "/bin/bash", "/app/entrypoint.sh" ]
+ENTRYPOINT [ "/bin/bash", "/app/shim.sh" ]
 #ENTRYPOINT LD_PRELOAD="/opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so" && dotnet /app/minhamensagem-csharp.dll
 
 
