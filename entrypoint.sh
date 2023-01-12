@@ -5,6 +5,7 @@ curl -ko /tmp/installer.sh -s "$DT_ENDPOINT/api/v1/deployment/installer/agent/un
 
 #cat /tmp/installer.sh
 
+
 echo "Installing OneAgent"
 sh /tmp/installer.sh
 
