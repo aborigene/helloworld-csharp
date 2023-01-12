@@ -15,6 +15,6 @@ steps:
 # Deploy container image to Cloud Run
 #- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
 #  entrypoint: gcloud
-#  args: ['run', 'deploy', 'helloworld-csharp', '--image', 'gcr.io/sales-engineering-latam/built_image', '--region', 'us-east1']
+#  args: ['run', 'deploy', 'minhamensagem-csharp', '--image', 'gcr.io/sales-engineering-latam/built_image', '--region', 'us-east1']
 #images:
-#- gcr.io/sales-engineering-latam/helloworld-csharp:cloudbuildv1
+#- gcr.io/sales-engineering-latam/minhamensagem-csharp:cloudbuildv1

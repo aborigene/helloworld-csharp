@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /app
-env
+
 echo "Starting app"
 /bin/bash entrypoint.sh &
 
@@ -22,6 +22,6 @@ do
         echo "Reading $f"
         cat "/opt/dynatrace/oneagent/log/dotnet/$f"
     done
-    sleep 2
+    sleep 120
     
 done

@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>helloworld_csharp</RootNamespace>
+    <RootNamespace>minhamensagem_csharp</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

@@ -15,7 +15,7 @@ using OpenTelemetry.Exporter;
 //#using System.Net.Http.Headers;
 //#using System.Threading.Tasks;
 
-var serviceName = "Dynatrace.GCPCloudRun.HelloWorld"+Environment.GetEnvironmentVariable("AMBIENTE");
+var serviceName = "Dynatrace.GCPCloudRun.MinhaMensagem"+Environment.GetEnvironmentVariable("AMBIENTE");
 var serviceVersion = "0.0.1";
 
 var builder = WebApplication.CreateBuilder(args);
