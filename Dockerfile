@@ -28,3 +28,4 @@ ENTRYPOINT [ "/bin/bash", "/app/shim.sh" ]
 #COPY --from=BUILD "/app" "/app"
 
 #ENTRYPOINT dotnet /app/minhamensagem-csharp.dll
+

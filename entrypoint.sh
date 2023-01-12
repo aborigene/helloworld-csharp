@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+
 echo "Downloading OneAgent"
 curl -ko /tmp/installer.sh -s "$DT_ENDPOINT/api/v1/deployment/installer/agent/unix/paas-sh/latest?Api-Token=$DT_TOKEN&arch=x86&include=dotnet" 
 #ls -l /tmp

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 cd /app
 
 echo "Starting app"
